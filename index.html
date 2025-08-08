@@ -50,6 +50,13 @@
         text-align: right;
         padding: 5px;
 
+        footer {
+        background-color:  translate(-50%);
+        color: rgb(181, 7, 204);
+        text-align: center;
+        padding: 10px 0;
+        font-size: 15px;
+}
 
     }
     </Style>
@@ -121,6 +128,24 @@
            }
         }
 
+        window.addEventListener('keydown', function(event) {
+    const key = event.key;
+    const allowedKeys = ['0','1','2','3','4','5','6','7','8','9','+','-','*','/','.'];
+
+    if (allowedKeys.includes(key)) {
+        insert(key);
+    } else if (key === 'Enter') {
+        calcular();
+    } else if (key === 'Backspace') {
+        back();
+    } else if (key === 'Delete') {
+        clean();
+    }
+});
+
     </script>
+    <footer>
+        <p>&copy; Calculadora. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
